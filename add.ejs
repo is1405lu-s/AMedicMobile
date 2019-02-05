@@ -1,0 +1,54 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %>	
+
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<form action="/patient/add" method="post" name="form1">
+	<table width="25%" border="0">
+		<tr> 
+			<td>ID*</td>
+			<td><input type="text" name="ID" id="ID" value="<%= ID %>" /></td>
+		</tr>
+		<tr> 
+			<td>Name*</td>
+			<td><input type="text" name="name" value="<%= name %>" /></td>
+		</tr>
+		<tr> 
+			<td>National ID*</td>
+			<td><input type="text" name="nationalID" value="<%= nationalID %>" /></td>
+		</tr>
+		<tr> 
+			<td>Mobile No*</td>
+			<td><input type="text" name="mobileNo" id="mobileNo" value="<%= mobileNo %>" /></td>
+		</tr>
+		<tr> 
+			<td>Sex*</td>
+			<td><input type="text" name="sex" value="<%= sex %>" /></td>
+		</tr>
+		<tr> 
+			<td>Village Name*</td>
+			<td><input type="text" name="villageName" value="<%= villageName %>" /></td>
+		</tr>
+		<tr> 
+			<td>Date of Birth*</td>
+			<td><input type="date" name="dateOfBirth" value="<%= dateOfBirth %>" /></td>
+		</tr>
+		<tr> 
+			<td></td>
+			<td><input type="submit" name="Submit" value="Add Patient" /></td>
+		</tr>
+	</table>
+</form>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>
